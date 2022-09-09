@@ -19,12 +19,12 @@ int Inversion(int value)
 {
     value = Math.Abs(value);
     int valueA = 0;
-    while(value > 0)
+    while (value > 0)
     {
-        valueA = (valueA + value%10)*10;
-        value = (value - value%10)/10;
+        valueA = (valueA * 10 + value % 10);
+        value = value / 10;
     }
-    return valueA/10;
+    return valueA;
 }
 int value1 = Prompt("Введите число : ");
 int value2 = Inversion(value1);
@@ -34,5 +34,5 @@ if (Math.Abs(value1) == value2)
 }
 else
 {
-    System.Console.WriteLine($"Число {value1} не является полиандромом");
+    System.Console.WriteLine($"Число {value2} не является полиандромом");
 }
